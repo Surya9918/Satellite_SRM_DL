@@ -1,0 +1,12 @@
+# Master Configuration for Satellite-SRM
+project_name: "satellite-srm"
+problem_statement_id: "26142"
+organization: "NTRO"
+version: "1.0.0"
+
+seed: 42
+device: "cuda"  # "cuda", "cpu", or "auto"
+log_level: "INFO"
+output_dir: "outputs"
+checkpoints_dir: "checkpoints"
+pretrained_dir: "pretrained"

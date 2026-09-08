@@ -1,0 +1,17 @@
+{
+  "scene_id": "S2A_MSIL2A_20260515_agriculture",
+  "sensor": "Sentinel-2",
+  "product": "L2A",
+  "acquisition_date": "2026-05-15",
+  "cloud_cover": 2.5,
+  "bands": [
+    "B02",
+    "B03",
+    "B04",
+    "B08"
+  ],
+  "crs": "EPSG:4326",
+  "source": "Copernicus Data Space Ecosystem / Calibrated Sentinel-2",
+  "checksum": "215bf20acd498e0b9501ecb20925ccba04e50f22b824e7fdb769aedcd7b7b4d5",
+  "file_path": "data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif"
+}

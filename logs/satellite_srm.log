@@ -1,0 +1,31 @@
+[2026-09-07 15:46:47] [INFO] [satellite_srm.sentinel2.acquire_scene:40] Generating calibrated Sentinel-2 L2A scene: S2A_MSIL2A_20260515_agriculture
+[2026-09-07 15:46:47] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif
+[2026-09-07 15:46:47] [INFO] [satellite_srm.sentinel2.acquire_scene:95] Sentinel-2 scene acquired: data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif (SHA-256: 215bf20acd49...)
+[2026-09-07 15:46:48] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: data/raw/worldstrat/S2A_MSIL2A_20260515_agriculture_HR_proxy.tif
+[2026-09-07 15:46:48] [INFO] [satellite_srm.worldstrat.generate_reference_pair:87] Generated calibrated HR reference proxy: data/raw/worldstrat/S2A_MSIL2A_20260515_agriculture_HR_proxy.tif (Scale: 3.0x, GSD: 3.33m)
+[2026-09-07 15:46:59] [INFO] [satellite_srm.patches.extract_pairs:97] Extracted 9 patch pairs for scene S2A_MSIL2A_20260515_agriculture
+[2026-09-07 15:46:59] [INFO] [satellite_srm.sampler.split:43] Geographic split complete: 6 train, 1 val, 2 test.
+[2026-09-07 15:47:22] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 15:47:40] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 15:47:54] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 15:51:44] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 15:51:44] [INFO] [satellite_srm.inference_pipeline.run:37] Starting Full-Scene SRM Inference on: data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif
+[2026-09-07 15:51:45] [INFO] [satellite_srm.inference_pipeline.run:50] Decomposed scene into 9 overlapping tiles (Tile: 128, Overlap: 32)
+[2026-09-07 15:57:06] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 15:57:06] [INFO] [satellite_srm.inference_pipeline.run:37] Starting Full-Scene SRM Inference on: data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif
+[2026-09-07 15:57:06] [INFO] [satellite_srm.inference_pipeline.run:50] Decomposed scene into 9 overlapping tiles (Tile: 128, Overlap: 16)
+[2026-09-07 15:58:58] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: outputs/sr/SR_product.tif
+[2026-09-07 15:58:58] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: outputs/uncertainty/uncertainty_map.tif
+[2026-09-07 15:58:58] [INFO] [satellite_srm.inference_pipeline.run:91] Full-Scene inference completed in 112.10s. Sub-4m product: outputs/sr/SR_product.tif
+[2026-09-07 15:59:15] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 16:00:17] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 16:04:19] [INFO] [satellite_srm.sentinel2.acquire_scene:36] Scene S2A_MSIL2A_20260515_agriculture already exists at data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif
+[2026-09-07 16:04:23] [INFO] [satellite_srm.patches.extract_pairs:97] Extracted 9 patch pairs for scene S2A_MSIL2A_20260515_agriculture
+[2026-09-07 16:04:23] [INFO] [satellite_srm.sampler.split:43] Geographic split complete: 6 train, 1 val, 2 test.
+[2026-09-07 16:04:24] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...
+[2026-09-07 16:04:24] [INFO] [satellite_srm.inference_pipeline.run:37] Starting Full-Scene SRM Inference on: data/raw/sentinel2/S2A_MSIL2A_20260515_agriculture.tif
+[2026-09-07 16:04:24] [INFO] [satellite_srm.inference_pipeline.run:50] Decomposed scene into 9 overlapping tiles (Tile: 128, Overlap: 16)
+[2026-09-07 16:06:20] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: outputs/sr/SR_product.tif
+[2026-09-07 16:06:20] [INFO] [satellite_srm.geotiff.write_geotiff:159] GeoTIFF written via TIFF engine to: outputs/uncertainty/uncertainty_map.tif
+[2026-09-07 16:06:20] [INFO] [satellite_srm.inference_pipeline.run:91] Full-Scene inference completed in 115.73s. Sub-4m product: outputs/sr/SR_product.tif
+[2026-09-07 16:06:20] [INFO] [satellite_srm.model_factory.create_model:26] Initializing Multispectral SwinIR model (Scale: 3.0x, 4 bands)...

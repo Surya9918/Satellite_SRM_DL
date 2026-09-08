@@ -1,0 +1,20 @@
+# Domain Application Analysis
+agriculture:
+  indices: ["NDVI", "SAVI", "EVI"]
+  edge_detection_method: "sobel_morphological"
+  ndvi_thresholds:
+    barren_soil: 0.15
+    sparse_vegetation: 0.35
+    dense_canopy: 0.65
+
+urban:
+  indices: ["NDBI", "UI"]
+  high_frequency_enhancement: true
+  building_edge_sigma: 1.2
+  boundary_dilation_kernel: 3
+
+disaster:
+  indices: ["NDWI", "MNDWI"]
+  water_threshold: 0.0
+  flood_change_detection: true
+  minimum_waterbody_pixels: 50

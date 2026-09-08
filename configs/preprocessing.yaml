@@ -1,0 +1,32 @@
+# Preprocessing & Patch Extraction Pipeline
+cloud_masking:
+  use_scl: true
+  scl_cloud_classes: [3, 8, 9, 10, 11] # 3: cloud shadow, 8: med prob, 9: high prob, 10: cirrus, 11: snow
+  s2cloudless_threshold: 0.40
+  dilation_kernel_size: 5
+  mask_shadows: true
+
+radiometric_normalization:
+  method: "reflectance_scaling"  # "reflectance_scaling" or "percentile_minmax"
+  scale_factor: 10000.0  # Sentinel-2 DN to Surface Reflectance (0-1)
+  percentile_min: 1.0
+  percentile_max: 99.0
+  clip_range: [0.0, 1.0]
+
+co_registration:
+  algorithm: "phase_correlation"  # "phase_correlation" or "orb_feature_matching"
+  min_overlap_ratio: 0.85
+  max_registration_error_pixels: 2.0
+  reject_bad_pairs: true
+
+patches:
+  lr_patch_size: 128
+  scale_factor: 3.0  # 10m -> 3.33m target GSD
+  hr_patch_size: 384  # 128 * 3
+  stride: 64
+  overlap_ratio: 0.50
+  min_valid_pixel_ratio: 0.90
+  split_strategy: "geographic_region"
+  train_regions: ["region_north", "region_east"]
+  val_regions: ["region_central"]
+  test_regions: ["region_south"]

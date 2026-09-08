@@ -1,0 +1,17 @@
+{
+  "train": [
+    "S2A_MSIL2A_20260515_agriculture_p_0_0",
+    "S2A_MSIL2A_20260515_agriculture_p_64_0",
+    "S2A_MSIL2A_20260515_agriculture_p_128_0",
+    "S2A_MSIL2A_20260515_agriculture_p_0_64",
+    "S2A_MSIL2A_20260515_agriculture_p_64_64",
+    "S2A_MSIL2A_20260515_agriculture_p_128_64"
+  ],
+  "val": [
+    "S2A_MSIL2A_20260515_agriculture_p_0_128"
+  ],
+  "test": [
+    "S2A_MSIL2A_20260515_agriculture_p_64_128",
+    "S2A_MSIL2A_20260515_agriculture_p_128_128"
+  ]
+}

@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data and large weights
+data/raw/
+data/interim/
+data/cache/
+checkpoints/*.pt
+pretrained/*.pth
+pretrained/*.pt
+outputs/sr/*.tif
+outputs/uncertainty/*.tif
+outputs/validation/
+outputs/visualizations/
+outputs/reports/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test & coverage
+.coverage
+htmlcov/
+.pytest_cache/

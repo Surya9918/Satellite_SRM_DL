@@ -1,0 +1,22 @@
+batch_size: 4
+blending_method: weighted_hann
+io:
+  blockxsize: 256
+  blockysize: 256
+  compress: deflate
+  predictor: 2
+  tiled: true
+overlap: 16
+scale_factor: 3.0
+target_gsd_meters: 3.333
+tile_size: 128
+uncertainty:
+  enabled: true
+  mc_passes: 2
+  method: mc_dropout
+  percentiles:
+  - 50
+  - 90
+  - 95
+  - 99
+  save_uncertainty_geotiff: true

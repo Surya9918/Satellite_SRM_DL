@@ -1,0 +1,24 @@
+# Validation and Quality Assurance
+metrics:
+  psnr:
+    data_range: 1.0
+  ssim:
+    win_size: 11
+    data_range: 1.0
+  sam:
+    degrees: true
+  ergas:
+    scale_ratio: 3.0
+  ndvi:
+    epsilon: 1.0e-6
+    evaluate_correlation: true
+
+baseline:
+  method: "bicubic"
+  anti_aliasing: true
+
+reports:
+  generate_json: true
+  generate_csv: true
+  generate_html: true
+  save_visualizations: true

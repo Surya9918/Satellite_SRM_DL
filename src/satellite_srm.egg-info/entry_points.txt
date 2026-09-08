@@ -1,0 +1,2 @@
+[console_scripts]
+satellite-srm = satellite_srm.cli:main

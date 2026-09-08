@@ -1,0 +1,46 @@
+# Data Ingestion and Source Configuration
+sentinel2:
+  sensor: "Sentinel-2"
+  product_type: "S2MSI2A"  # L2A Bottom of Atmosphere (BOA) Reflectance
+  bands:
+    - name: "B02"
+      description: "Blue"
+      central_wavelength_nm: 492.4
+      nominal_resolution_m: 10.0
+    - name: "B03"
+      description: "Green"
+      central_wavelength_nm: 559.8
+      nominal_resolution_m: 10.0
+    - name: "B04"
+      description: "Red"
+      central_wavelength_nm: 664.6
+      nominal_resolution_m: 10.0
+    - name: "B08"
+      description: "Near Infrared (NIR)"
+      central_wavelength_nm: 832.8
+      nominal_resolution_m: 10.0
+  max_cloud_cover_percent: 15.0
+  data_source: "copernicus_data_space"
+  odata_url: "https://catalogue.dataspace.copernicus.eu/odata/v1/Products"
+  token_url: "https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token"
+
+worldstrat:
+  reference_proxy: true
+  ground_truth_disclaimer: "WorldStrat serves as high-resolution optical reference proxy, not physical in-situ truth."
+  download_mechanism: "zenodo_or_manual"
+  dataset_version: "v1.0"
+  target_gsd_m: 2.5
+
+aois:
+  agriculture:
+    name: "Punjab_Agricultural_Basin"
+    bbox: [75.10, 30.20, 75.60, 30.70] # [min_lon, min_lat, max_lon, max_lat]
+    description: "Intensive agricultural land with crop field boundaries, pivot irrigation, and seasonal vegetation dynamics"
+  urban:
+    name: "Hyderabad_PeriUrban_Sector"
+    bbox: [78.20, 17.25, 78.65, 17.65]
+    description: "High-density urban development, building perimeters, industrial zones, and transit infrastructure"
+  disaster:
+    name: "Assam_Brahmaputra_Basin"
+    bbox: [92.60, 26.10, 93.10, 26.60]
+    description: "Flood-prone river basin with dynamic sandbars, braided channels, and seasonal water inundation"
