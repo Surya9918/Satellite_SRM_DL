@@ -69,7 +69,7 @@ class CopernicusClient:
         )
         url = f"{self.odata_url}?$filter={filter_query}&$top=10&$orderby=ContentDate/Start desc"
         try:
-            resp = requests.get(url, timeout=20)
+            resp = requests.get(url, timeout=60)
             if resp.status_code == 200:
                 return resp.json().get("value", [])
             logger.warning(f"CDSE search returned HTTP {resp.status_code}")
@@ -77,3 +77,30 @@ class CopernicusClient:
         except Exception as e:
             logger.warning(f"CDSE search request error: {e}")
             return []
+
+    def download_product(self, product_id: str, output_path: str) -> bool:
+        """
+        Downloads a product ZIP archive from CDSE by product ID.
+        """
+        if not self._access_token:
+            logger.warning("Cannot download: not authenticated.")
+            return False
+            
+        download_url = f"https://zipper.dataspace.copernicus.eu/odata/v1/Products({product_id})/$value"
+        headers = {"Authorization": f"Bearer {self._access_token}"}
+        
+        try:
+            logger.info(f"Initiating download for product {product_id}...")
+            with requests.get(download_url, headers=headers, stream=True, timeout=30) as r:
+                r.raise_for_status()
+                with open(output_path, 'wb') as f:
+                    for chunk in r.iter_content(chunk_size=8192*1024): 
+                        f.write(chunk)
+            logger.info(f"Successfully downloaded product {product_id} to {output_path}")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to download product {product_id}: {e}")
+            if os.path.exists(output_path):
+                os.remove(output_path)
+            return False
+

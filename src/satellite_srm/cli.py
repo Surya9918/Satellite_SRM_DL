@@ -49,6 +49,16 @@ def cmd_validate(_args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_download_data(args: argparse.Namespace) -> int:
+    from satellite_srm.acquisition.sentinel2 import Sentinel2Downloader
+    print("Starting data download workflow...")
+    downloader = Sentinel2Downloader()
+    scene_id = getattr(args, "scene_id", "S2A_MSIL2A_20260515_agriculture")
+    bbox = getattr(args, "bbox", [13.4, 52.5, 13.5, 52.6])
+    downloader.acquire_scene(scene_id=scene_id, bbox=bbox)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="satellite-srm",
@@ -71,8 +81,11 @@ def build_parser() -> argparse.ArgumentParser:
     validate_parser = subparsers.add_parser("validate", help="validate dataset or model outputs")
     validate_parser.set_defaults(func=cmd_validate)
 
+    download_parser = subparsers.add_parser("download-data", help="download satellite data")
+    download_parser.add_argument("--scene-id", dest="scene_id", type=str, default="S2A_MSIL2A_20260515_agriculture")
+    download_parser.set_defaults(func=cmd_download_data)
+
     for name in [
-        "download-data",
         "prepare-data",
         "validate-data",
         "download-models",

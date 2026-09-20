@@ -5,6 +5,10 @@ Hierarchical configuration manager loading and validating YAML settings with env
 import os
 import yaml
 from typing import Any, Dict, Optional
+import dotenv
+
+dotenv.load_dotenv()
+
 
 class ConfigDict(dict):
     """Dictionary subclass enabling attribute-style dot access."""
